@@ -1,6 +1,22 @@
-const app = require('express')
+const express = require('express')
+const bodyParser = require('body-parser')
 
-const port = process.env.PORT || 3000;
+const app = express()
+const port = process.env.PORT || 3080;
+app.use(bodyParser.json())
+
+// access static HTML5 files from public folder
+app.use(express.static('public'))
+
+// tells server to parse incoming data as JSON
+app.use(express.json())
+
+
+
+
+
+
+
 
 
 app.listen(port, () =>{
